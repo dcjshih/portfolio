@@ -1,0 +1,99 @@
+/* Auto layout */
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background: #FAF9F7;
+}
+
+
+/* Logo */
+
+.logo {
+    width: 30px;
+    height: 43px;
+    font-family: 'Train One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 43px;
+    color: #41382A;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: #41382A;
+}
+
+h1 {
+    width: 180px;
+    height: 45px;
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 45px;
+    color: #41382A;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+
+/* Navigation links */
+
+.nav_links {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 275;
+    font-size: 15px;
+    /* line-height: 22px; */
+    color: #41382A;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+}
+
+.nav_links>a {
+    text-align: center;
+}
+
+
+/* Projects */
+
+.projects {
+    width: 60px;
+    height: 23px;
+    order: 0;
+}
+
+
+/* About me */
+
+.about {
+    width: 74px;
+    height: 23px;
+    order: 1;
+}
+
+
+/* Links */
+
+.links {
+    width: 30px;
+    height: 23px;
+    order: 2;
+}
