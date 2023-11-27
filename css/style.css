@@ -1,6 +1,26 @@
-/* Auto layout */
+/* general */
 
-body {
+
+/* Logo */
+
+.logo {
+    width: 30px;
+    height: 45px;
+    font-family: 'Train One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 43px;
+    color: #41382A;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+
+/* index.html */
+
+.homepage {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,28 +33,9 @@ body {
     background: #FAF9F7;
 }
 
-
-/* Logo */
-
-.logo {
-    width: 30px;
-    height: 43px;
-    font-family: 'Train One';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 30px;
-    line-height: 43px;
-    color: #41382A;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-}
-
-a {
-    text-decoration: none;
-}
-
+a,
 a:visited {
+    text-decoration: none;
     color: #41382A;
 }
 
@@ -55,45 +56,94 @@ h1 {
 
 /* Navigation links */
 
-.nav_links {
+.homepage_links {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 275;
     font-size: 15px;
     /* line-height: 22px; */
-    color: #41382A;
+    color: #FAF9F7;
     display: grid;
     grid-template-columns: 1fr;
     justify-content: center;
 }
 
-.nav_links>a {
+.homepage_links>a {
     text-align: center;
 }
 
+.linkpage {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 50px 30px;
+    gap: 50px;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: #41382A;
+}
 
-/* Projects */
-
-.projects {
-    width: 60px;
-    height: 23px;
-    order: 0;
+.linkpage_links>a,
+.linkpage_links>a:visited {
+    color: #FAF9F7;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 45px;
 }
 
 
-/* About me */
+/* 石 */
 
-.about {
-    width: 74px;
-    height: 23px;
-    order: 1;
+.linkpage>.topbar_linkpage>.logo {
+    margin: 0;
+    width: fit-content;
+    height: 45px;
+    font-family: 'Train One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 43px;
+    color: #FAF9F7;
+}
+
+.topbar_linkpage {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    width: 100vw;
+    gap: auto;
+    height: 48px;
+}
+
+.back_button {
+    margin: 0;
+    width: fit-content;
+    height: 34px;
 }
 
 
-/* Links */
+/* Auto layout */
 
-.links {
-    width: 30px;
-    height: 23px;
-    order: 2;
+.linkpage_links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 20px;
+    width: 364px;
+    height: 300px;
+}
+
+
+/* Line 1 */
+
+hr {
+    width: 100vw;
+    height: 0px;
+    border: 1px solid #FAF9F7;
 }
