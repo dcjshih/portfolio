@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Train+One&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap">
+    <script src="components.js"></script>
 </head>
 
 <body>
@@ -21,7 +22,21 @@
                     <img src="images/quill_hamburger_dark.png" alt="To links">
                 </a>
             </div>
-            <img src="images/headshot2.jpeg" class="profile">
+            <div class="about_container">
+                <!-- <img src="images/drawing.png" alt="drawing of debbie shih" class="profile"> -->
+                <img src="images/drawing.png" alt="drawing of debbie shih" class="profile" id="tuna-image" onclick="openLightbox('images/lightbox.png')">
+                <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+                    <img id="lightbox-image" class="lightbox-content" alt="Enlarged Image" src="a">
+                </div>
+                <div>
+                    <h1>hi! my name is debbie</h1>
+                    <p>I am a junior at the University of Michigan, majoring in Computer Science and minoring in UI/UX and Entrepreneurship. My journey, both within and outside the classroom, has provided me with invaluable experiences across the entire
+                        lifecycle of digital product development. From conducting comprehensive market research to actively participating in the development process, I've had the privilege of gaining hands-on experience at every stage. Because of this,
+                        I am deeply passionate about crafting digital products that are not only effective but also user-friendly and accessible to all. </p>
+                    <p>In my free time, I love playing volleyball and Super Smash Bros!</p>
+                </div>
+            </div>
+
 
         </div>
 

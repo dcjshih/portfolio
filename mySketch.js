@@ -5,13 +5,13 @@ function setup() {
     let canvasContainer = select('#canvas-container');
     let cnv = createCanvas(windowWidth, windowHeight);
     cnv.parent(canvasContainer)
-    let size = min(width, height) * 7 / 6;
+    let size2 = min(width, height) * 7 / 6;
     noStroke();
     fill(250, 249, 247);
 
     let points = [];
     for (let i = 0; i < 20000; i++) {
-        points.push(createVector(width / 2 + random(-size / 2, size / 2), height / 2 + random(-size / 2, size / 2)));
+        points.push(createVector(width / 2 + random(-size2 / 2, size2 / 2), height / 2 + random(-size2 / 2, size2 / 2)));
     }
 
     clusters = divide(points);

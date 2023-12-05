@@ -19,14 +19,14 @@
         font-family: 'Poppins';
         font-style: normal;
         font-weight: 300;
-        font-size: 70%;
+        font-size: 100%;
     }
 
     h1 {
         font-family: 'Poppins';
         font-style: italic;
         font-weight: 700;
-        font-size: 200%;
+        font-size: 400%;
         color: #41382A;
     }
 
@@ -34,7 +34,7 @@
         font-family: 'Poppins';
         font-style: italic;
         font-weight: 700;
-        font-size: 100%;
+        font-size: 200%;
         color: #41382A;
     }
 
@@ -42,8 +42,28 @@
         font-family: 'Poppins';
         font-style: normal;
         font-weight: 700;
-        font-size: 75%;
+        font-size: 150%;
         color: #41382A;
+    }
+
+    #lightbox {
+        /* Additional styles for the lightbox container */
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        align-items: center;
+        justify-content: center;
+    }
+
+    #lightbox-image {
+        /* Additional styles for the lightbox image */
+        max-width: 90%;
+        max-height: 90%;
+        cursor: pointer;
     }
     /* projects.html */
 
@@ -151,10 +171,6 @@
     .inner_container {
         width: 85%;
         margin: 10%;
-    }
-
-    .profile {
-        width: 100%;
     }
 
     .linkpage_links>a,
@@ -307,6 +323,16 @@
         border-radius: 10px;
         background-color: #FAF9F7;
         color: #41382A;
+    }
+
+    .about_container {
+        display: grid;
+        grid-template-columns: 1fr 6fr;
+        gap: 4%;
+    }
+
+    .profile {
+        width: 100%;
     }
 
     @media (min-width: 768px) {
