@@ -1,77 +1,119 @@
-let tdMahomes = [41, 37, 38, 26, 5];
-let intMahomes = [12, 13, 6, 5, 12];
-let jogadores = ["Patrick Mahomes", "Justin Herbert", "Joe Burrow", "Russel Wilson", "Derek Carr"]
+let clusters = [];
+let hulls = [];
 
 function setup() {
-    // Create a canvas with the size of the containing div
-    createCanvas(400, 400);
-    console.log(jogadores[0]);
+    let canvasContainer = select('#canvas-container');
+    let cnv = createCanvas(windowWidth, windowHeight);
+    cnv.parent(canvasContainer)
+    let size = min(width, height) * 7 / 6;
+    noStroke();
+    fill(250, 249, 247);
 
-    frameRate(1)
+    let points = [];
+    for (let i = 0; i < 20000; i++) {
+        points.push(createVector(width / 2 + random(-size / 2, size / 2), height / 2 + random(-size / 2, size / 2)));
+    }
 
-
+    clusters = divide(points);
+    hulls = [convexHull(clusters[0]), convexHull(clusters[1])];
 }
 
 function draw() {
-
-
-    let sorteioCorFundo = random(0, 1);
-    let sorteioCorFundoRound = round(sorteioCorFundo);
-
-    let sorteioCor = random(0, 1);
-    let sorteioCorRound = round(sorteioCor);
-
-    let sorteioCinzaF = random(0, 255);
-    let sorteioCinzaQ = random(0, 255);
-
-    let sorteioQuadradoR = random(0, 255);
-    let sorteioQuadradoG = random(0, 255);
-    let sorteioQuadradoB = random(0, 255);
-
-
-
-    if (sorteioCorFundoRound == 1) {
-        background(250, 249, 247);
+    // background("#2560AC");
+    background("#41382A")
+    for (let hull of hulls) {
+        if (hull.length > 3) {
+            beginShape();
+            for (let p of hull) {
+                vertex(p.x, p.y);
+            }
+            endShape(CLOSE);
+        }
     }
+}
 
+function mouseReleased() {
+    let p = createVector(mouseX, mouseY);
+    let argmin = -1;
+    let minDist = width * height;
 
-
-
-
-    for (let i = 0; i < 7; i++) {
-        for (let j = 0; j < 7; j++) {
-
-            let aleatorio = random(0, 90)
-
-            noStroke();
-            if (sorteioCorRound == 0) {
-                fill(sorteioCinzaF);
-                rect(80 + (134 * j), 40 + (160 * i), aleatorio, 120);
-            } else if (sorteioCorRound == 1) {
-                fill(sorteioQuadradoR, sorteioQuadradoG, sorteioQuadradoB);
-                rect(80 + (134 * j), 40 + (160 * i), aleatorio, 120)
+    for (let i = 0; i < clusters.length; i++) {
+        for (let q of clusters[i]) {
+            let d = distSquared(p, q);
+            if (d < minDist) {
+                argmin = i;
+                minDist = d;
+                continue;
             }
         }
     }
 
-
-    if (sorteioCor == 0) {
-        let sorteioCinzaF = random(0, 255);
-        let sorteioCinzaQ = random(0, 255);
-
+    if (hulls[argmin].length > 5) {
+        let clu = clusters.splice(argmin, 1)[0];
+        let newClusters = divide(clu);
+        clusters = [...clusters, ...newClusters];
+        hulls.splice(argmin, 1);
+        hulls = [...hulls, convexHull(newClusters[0]), convexHull(newClusters[1])];
     }
 
-    // if (sorteio == 1) {
-
+    return false;
 }
 
-// function windowResized() {
-//     const containerWidth = document.getElementById('p5-container').offsetWidth;
-//     const containerHeight = document.getElementById('p5-container').offsetHeight;
+// divide points into two convex clusters
+function divide(points) {
+    let clusters = [];
 
-//     resizeCanvas(containerWidth, containerHeight);
-// }
+    // initialize centroids randomly
+    let centroids = [];
+    for (let i = 0; i < 2; i++) {
+        let c;
+        do {
+            c = random(points);
+        } while (centroids.indexOf(c) != -1)
+        centroids.push(c);
+        clusters.push([]);
+    }
 
-// Call windowResized whenever the window is resized
-// window.addEventListener('resize', windowResized);
-document.getElementById('p5-container').appendChild(canvas.elt);
+    // assign clusters
+    for (let p of points) {
+        let argmin = 0;
+        let minDist = distSquared(p, centroids[0]);
+        for (let i = 1; i < 2; i++) {
+            let d = distSquared(p, centroids[i]);
+            if (d < minDist) {
+                minDist = d;
+                argmin = i;
+            }
+        }
+        clusters[argmin].push(p);
+    }
+
+    return clusters;
+}
+
+function convexHull(points) {
+    // adapted from https://en.wikipedia.org/wiki/Gift_wrapping_algorithm#Pseudocode
+    points.sort((p, q) => p.x - q.x);
+    let hull = [];
+    let i = 0;
+    let endPoint;
+    let pointOnHull = points[0];
+    do {
+        hull.push(pointOnHull);
+        endPoint = points[0];
+        for (let j = 0; j < points.length; j++) {
+            let p = p5.Vector.sub(endPoint, pointOnHull);
+            let q = p5.Vector.sub(points[j], pointOnHull);
+            if (endPoint.equals(pointOnHull) || (p.cross(q)).z < 0) {
+                endPoint = points[j];
+            }
+        }
+        i++;
+        pointOnHull = endPoint;
+    } while (!endPoint.equals(points[0]));
+    return hull;
+}
+
+function distSquared(p, q) {
+    return sq(p.x - q.x) + sq(p.y - q.y);
+}
