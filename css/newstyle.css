@@ -1,147 +1,201 @@
-/* HTML Elements */
+    /* HTML Elements */
 
-body {
-    font-family: Helvetica;
-    box-sizing: border-box;
-    color: #41382A;
-    background-color: #FAF9F7;
-    width: 100vw;
-    height: 100vh;
-    padding: 3vh 8vw;
-    margin: 0;
-}
+    body {
+        font-family: Helvetica;
+        box-sizing: border-box;
+        color: #41382A;
+        background-color: #FAF9F7;
+        width: 100vw;
+        height: 100vh;
+        padding: 3vh 8vw;
+        margin: 0;
+    }
 
-h1 {
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18vw;
-    /* line-height: 92px; */
-    /* identical to box height */
-    margin: 0;
-    letter-spacing: -0.08em;
-    margin: 2vh 0;
-}
+    h1 {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18vw;
+        /* line-height: 92px; */
+        /* identical to box height */
+        margin: 0;
+        letter-spacing: -0.08em;
+        margin: 2vh 0;
+    }
 
-h2 {
-    font-family: 'Helvetica';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 12vw;
-    line-height: 46px;
-    /* identical to box height */
-    letter-spacing: -0.08em;
-    color: #41382A;
-}
+    h2 {
+        font-family: 'Helvetica';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12vw;
+        line-height: 46px;
+        /* identical to box height */
+        letter-spacing: -0.08em;
+        color: #41382A;
+    }
+    /* Common Elements */
 
+    .topbar_group {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-/* Common Elements */
+    .blurb {
+        font-family: 'Helvetica';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 7vw;
+        line-height: 6vw;
+        letter-spacing: -0.05em;
+        color: #41382A;
+        margin: 2vh 0;
+    }
 
-.topbar_group {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
+    .skinny_rect_container {
+        position: relative;
+        width: 100%;
+        /* Adjust the width as needed */
+        height: 8vh;
+        /* Adjust the height to accommodate both rectangles */
+        margin: 10px 0;
+    }
 
-.blurb {
-    font-family: 'Helvetica';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 7vw;
-    line-height: 6vw;
-    letter-spacing: -0.05em;
-    color: #41382A;
-    margin: 2vh 0;
-}
+    .square_container {
+        position: relative;
+        width: 30vw;
+        /* Adjust the width as needed */
+        height: 30vw;
+        /* Adjust the height to accommodate both rectangles */
+        margin: 10px 0;
+    }
 
-.skinny_rect_container {
-    position: relative;
-    width: 100%;
-    /* Adjust the width as needed */
-    height: 8vh;
-    /* Adjust the height to accommodate both rectangles */
-    margin: 10px 0;
-}
+    .hamburger_container {
+        position: relative;
+        width: 13vw;
+        /* Adjust the width as needed */
+        height: 12vw;
+        /* Adjust the height to accommodate both rectangles */
+        margin: 10px 2vw;
+    }
 
-.square_container {
-    position: relative;
-    width: 30vw;
-    /* Adjust the width as needed */
-    height: 30vw;
-    /* Adjust the height to accommodate both rectangles */
-    margin: 10px 0;
-}
+    .project_container {
+        position: relative;
+        width: 100%;
+        height: 20vh;
+    }
 
-.hamburger_container {
-    position: relative;
-    width: 13vw;
-    /* Adjust the width as needed */
-    height: 12vw;
-    /* Adjust the height to accommodate both rectangles */
-    margin: 10px 2vw;
-}
+    .light-rectangle,
+    .dark-rectangle {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 2px solid #41382A;
+        border-radius: 8px;
+    }
 
-.light-rectangle,
-.dark-rectangle {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 2px solid #41382A;
-    border-radius: 8px;
-}
+    .light-rectangle {
+        background: #FAF9F7;
+        /* Light background color */
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 
-.light-rectangle {
-    background: #FAF9F7;
-    /* Light background color */
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+    .dark-rectangle {
+        background: #41382A;
+        /* Dark background color */
+        left: 5px;
+        /* Adjust the left position as needed */
+        bottom: -10px;
+        /* Adjust the bottom position as needed */
+        z-index: 1;
+    }
 
-.dark-rectangle {
-    background: #41382A;
-    /* Dark background color */
-    left: 5px;
-    /* Adjust the left position as needed */
-    bottom: -10px;
-    /* Adjust the bottom position as needed */
-    z-index: 1;
-}
+    .link_name,
+    .link_name:visited {
+        text-align: center;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 6vw;
+        color: #41382A;
+        text-decoration: none;
+        letter-spacing: -0.08em;
+        margin: 2vh 0;
+    }
+    /* Landing Page */
 
-.link_name,
-.link_name:visited {
-    text-align: center;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 6vw;
-    color: #41382A;
-    text-decoration: none;
-    letter-spacing: -0.08em;
-    margin: 2vh 0;
-}
+    .nav_links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2% 8%;
+    }
 
+    .group_nav_links {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 2vh 0;
+    }
 
-/* Landing Page */
+    .group_contact_links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28%;
+        margin: 2vh 0;
+    }
+    /* Projects Page */
 
-.nav_links {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2% 8%;
-}
+    .group_projects {
+        display: flex;
+        flex-direction: column;
+        gap: 3vh;
+    }
 
-.group_nav_links {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 2vh 0;
-}
+    .project_layout {
+        box-sizing: border-box;
+        padding: 5%;
+        height: 100%;
+        width: fit-content;
+    }
 
-.group_contact_links {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 28%;
-    margin: 2vh 0;
-}
+    .project_number {
+        font-weight: 700;
+        font-size: 13vw;
+        font-style: italic;
+        letter-spacing: 0em;
+    }
+
+    .project_name {
+        font-weight: 700;
+        font-size: 5vw;
+        width: 60%;
+        font-style: italic;
+        letter-spacing: 0em;
+    }
+
+    .project_heading {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 25%;
+    }
+
+    .project_desc {
+        font-size: 80%;
+    }
+
+    .project_label {
+        font-weight: 500;
+        font-size: 5vw;
+        width: 60%;
+        letter-spacing: 0em;
+        border: solid #41382A 2px;
+        border-radius: 8px;
+        width: fit-content;
+        padding: 2px 8px;
+    }
