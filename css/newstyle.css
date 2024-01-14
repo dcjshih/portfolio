@@ -113,6 +113,11 @@
         z-index: 1;
     }
 
+    a:visited {
+        text-decoration: none;
+        color: #41382A;
+    }
+
     .link_name,
     .link_name:visited {
         text-align: center;
