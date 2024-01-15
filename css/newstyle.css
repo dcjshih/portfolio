@@ -33,19 +33,16 @@
         color: #41382A;
     }
 
+    h3 {
+        margin: 0;
+    }
+
     a,
     a:visited {
         color: #41382A;
         text-decoration: none;
     }
-    /* Common Elements */
-
-    .topbar_group {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
+    /****** Common Elements ******/
 
     .blurb {
         font-family: 'Helvetica';
@@ -66,61 +63,25 @@
         border: 2px solid #41382A;
         box-shadow: 8px 8px 0px 0px #41382A;
     }
+    /****** Topbar ******/
 
-    .links_links {
-        width: 80px;
-    }
-
-    .square_container {
-        position: relative;
-        width: 30vw;
-        /* Adjust the width as needed */
-        height: 30vw;
-        /* Adjust the height to accommodate both rectangles */
-        margin: 10px 0;
-    }
-
-    .hamburger_container {
+    .topbar {
         position: relative;
         width: 13vw;
         /* Adjust the width as needed */
         height: 12vw;
         /* Adjust the height to accommodate both rectangles */
         margin: 10px 2vw;
-    }
-
-    .project_container {
-        position: relative;
-        width: 100%;
-        height: 20vh;
-    }
-
-    .light-rectangle,
-    .dark-rectangle {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border: 2px solid #41382A;
-        border-radius: 8px;
-    }
-
-    .light-rectangle {
-        background: #FAF9F7;
-        /* Light background color */
-        z-index: 2;
         display: flex;
-        flex-direction: column;
         justify-content: center;
+        align-items: center;
     }
 
-    .dark-rectangle {
-        background: #41382A;
-        /* Dark background color */
-        left: 5px;
-        /* Adjust the left position as needed */
-        bottom: -10px;
-        /* Adjust the bottom position as needed */
-        z-index: 1;
+    .topbar_group {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .link_name,
@@ -134,7 +95,7 @@
         letter-spacing: -0.08em;
         margin: 2vh 0;
     }
-    /* Landing Page */
+    /* ########### Landing Page ########### */
     /******* Navigation Links Section *******/
     /* Layout of the navigation links buttons */
 
@@ -164,6 +125,7 @@
         gap: 28%;
         margin: 2vh 0;
     }
+    /* Inner/container layout for contacts/social links */
 
     .contact_links {
         width: 30vw;
@@ -173,13 +135,21 @@
         justify-content: center;
         align-items: center;
     }
-    /* Projects Page */
+    /******* Projects Section *******/
+    /* Layout for the projects section */
 
     .group_projects {
         display: flex;
         flex-direction: column;
         gap: 3vh;
     }
+    /* Container layout for individual project components */
+
+    .project_container {
+        width: 100%;
+        height: fit-content;
+    }
+    /* Layout for individual project components */
 
     .project_layout {
         box-sizing: border-box;
@@ -195,14 +165,6 @@
         letter-spacing: 0em;
     }
 
-    .project_name {
-        font-weight: 700;
-        font-size: 5vw;
-        width: 60%;
-        font-style: italic;
-        letter-spacing: 0em;
-    }
-
     .project_heading {
         display: flex;
         flex-direction: row;
@@ -211,13 +173,21 @@
         height: 25%;
     }
 
+    .project_name {
+        font-weight: 700;
+        font-size: 5vw;
+        width: 60%;
+        font-style: italic;
+        letter-spacing: 0em;
+    }
+
     .project_desc {
         font-size: 80%;
     }
 
     .project_label {
         font-weight: 500;
-        font-size: 5vw;
+        font-size: 3vw;
         width: 60%;
         letter-spacing: 0em;
         border: solid #41382A 2px;
