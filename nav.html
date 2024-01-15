@@ -12,13 +12,10 @@
 <body>
     <div class="topbar_group">
         <h1>Links</h1>
-        <div class="hamburger_container">
-            <div class="dark-rectangle"></div>
-            <div class="light-rectangle">
-                <div onclick="goBack()" style="display: flex;
-                justify-content: center;
-                align-items: center;">
-                    <svg width="25" height="25" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="container topbar">
+            <div onclick="goBack()">
+                <div style="width: 10vw; height: 9vw;">
+                    <svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M5.3125 8.5H28.6875M5.3125 17H28.6875M5.3125 25.5H28.6875" stroke="#41382A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </div>
@@ -26,38 +23,29 @@
         </div>
     </div>
     <div class="group_nav_links">
-        <div class="skinny_rect_container">
-            <div class="dark-rectangle"></div>
-            <div class="light-rectangle">
-                <a href="/portfolio.html" class="link_name">
-                    <div class="nav_links">
-                        <div class="link_name">home</div>
-                        <span class="material-symbols-outlined">arrow_forward</span>
-                    </div>
-                </a>
-            </div>
+        <div class="container">
+            <a href="/portfolio/">
+                <div class="nav_links_inner">
+                    <div class="link_name">home</div>
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                </div>
+            </a>
         </div>
-        <div class="skinny_rect_container">
-            <div class="dark-rectangle"></div>
-            <div class="light-rectangle">
-                <a href="/portfolio/about.html" class="link_name">
-                    <div class="nav_links">
-                        <div class="link_name">about</div>
-                        <span class="material-symbols-outlined">arrow_forward</span>
-                    </div>
-                </a>
-            </div>
+        <div class="container">
+            <a href="/portfolio/projects.html">
+                <div class="nav_links_inner">
+                    <div class="link_name">projects</div>
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                </div>
+            </a>
         </div>
-        <div class="skinny_rect_container">
-            <div class="dark-rectangle"></div>
-            <div class="light-rectangle">
-                <a href="/portfolio/projects.html" class="link_name">
-                    <div class="nav_links">
-                        <div class="link_name">projects</div>
-                        <span class="material-symbols-outlined">arrow_forward</span>
-                    </div>
-                </a>
-            </div>
+        <div class="container">
+            <a href="/portfolio/about.html">
+                <div class="nav_links_inner">
+                    <div class="link_name">about</div>
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                </div>
+            </a>
         </div>
     </div>
     <script>
