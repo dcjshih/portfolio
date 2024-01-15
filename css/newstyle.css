@@ -5,8 +5,8 @@
         box-sizing: border-box;
         color: #41382A;
         background-color: #FAF9F7;
-        width: 100vw;
-        height: 100vh;
+        /* width: 100vw;
+        height: 100vh; */
         padding: 3vh 8vw;
         margin: 0;
     }
@@ -32,6 +32,12 @@
         letter-spacing: -0.08em;
         color: #41382A;
     }
+
+    a,
+    a:visited {
+        color: #41382A;
+        text-decoration: none;
+    }
     /* Common Elements */
 
     .topbar_group {
@@ -52,13 +58,17 @@
         margin: 2vh 0;
     }
 
-    .skinny_rect_container {
-        position: relative;
-        width: 100%;
-        /* Adjust the width as needed */
-        height: 8vh;
-        /* Adjust the height to accommodate both rectangles */
-        margin: 10px 0;
+    .container {
+        /* width: 100%; */
+        background-color: #FAF9F7;
+        color: #41382A;
+        border-radius: 8px;
+        border: 2px solid #41382A;
+        box-shadow: 8px 8px 0px 0px #41382A;
+    }
+
+    .links_links {
+        width: 80px;
     }
 
     .square_container {
@@ -113,11 +123,6 @@
         z-index: 1;
     }
 
-    a:visited {
-        text-decoration: none;
-        color: #41382A;
-    }
-
     .link_name,
     .link_name:visited {
         text-align: center;
@@ -130,27 +135,43 @@
         margin: 2vh 0;
     }
     /* Landing Page */
+    /******* Navigation Links Section *******/
+    /* Layout of the navigation links buttons */
 
-    .nav_links {
+    .nav_links_inner {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         padding: 2% 8%;
+        height: fit-content;
     }
+    /* Layout for the navigation links section */
 
     .group_nav_links {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        gap: 2vh;
         margin: 2vh 0;
     }
+    /******* Contact/Socials Links Section *******/
+    /* Layout for the contacts/socials links section */
 
     .group_contact_links {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 28%;
         margin: 2vh 0;
+    }
+
+    .contact_links {
+        width: 30vw;
+        height: 30vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
     }
     /* Projects Page */
 
