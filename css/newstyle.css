@@ -63,6 +63,18 @@
         border: 2px solid #41382A;
         box-shadow: 8px 8px 0px 0px #41382A;
     }
+
+    .link_name,
+    .link_name:visited {
+        text-align: center;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 6vw;
+        color: #41382A;
+        text-decoration: none;
+        letter-spacing: -0.08em;
+        margin: 2vh 0;
+    }
     /****** Topbar ******/
 
     .topbar {
@@ -84,16 +96,25 @@
         align-items: center;
     }
 
-    .link_name,
-    .link_name:visited {
-        text-align: center;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 6vw;
-        color: #41382A;
-        text-decoration: none;
-        letter-spacing: -0.08em;
-        margin: 2vh 0;
+    .svg_container {
+        /* width: 13vw;
+        height: 12vw;
+        resize: both;
+        overflow: auto;
+        border: 1px dashed #aaa; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    svg {
+        width: 95%;
+        height: 95%;
+    }
+
+    path {
+        transform-box: fill-box;
+        transform-origin: center;
     }
     /* ########### Landing Page ########### */
     /******* Navigation Links Section *******/
