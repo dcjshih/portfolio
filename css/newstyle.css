@@ -26,12 +26,16 @@
         font-family: 'Helvetica';
         font-style: normal;
         font-weight: 700;
-        font-size: 12vw;
+        font-size: 10vw;
         line-height: 46px;
         margin: 1vh 0;
         /* identical to box height */
         letter-spacing: -0.08em;
         color: #41382A;
+    }
+
+    h3 {
+        margin: 0;
     }
 
     p {
@@ -181,7 +185,7 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        height: 25%;
+        height: 10%;
     }
 
     .project_name {
