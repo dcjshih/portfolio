@@ -1,119 +1,48 @@
-let clusters = [];
-let hulls = [];
+// pattern 0001
+// fjenett 20100523
+
+//float w8, h8;  // width, height div 8
 
 function setup() {
-    let canvasContainer = select('#canvas-container');
-    let cnv = createCanvas(windowWidth, windowHeight);
-    cnv.parent(canvasContainer)
-    let size2 = min(width, height) * 7 / 6;
-    noStroke();
-    fill(250, 249, 247);
+    createCanvas(600, 600, SVG);
 
-    let points = [];
-    for (let i = 0; i < 20000; i++) {
-        points.push(createVector(width / 2 + random(-size2 / 2, size2 / 2), height / 2 + random(-size2 / 2, size2 / 2)));
-    }
+    smooth();
 
-    clusters = divide(points);
-    hulls = [convexHull(clusters[0]), convexHull(clusters[1])];
+    w8 = width / 8.0;
+    h8 = height / 8.0;
 }
 
 function draw() {
-    // background("#2560AC");
-    background("#41382A")
-    for (let hull of hulls) {
-        if (hull.length > 3) {
-            beginShape();
-            for (let p of hull) {
-                vertex(p.x, p.y);
-            }
-            endShape(CLOSE);
-        }
-    }
-}
+    background(255);
+    strokeWeight(2);
 
-function mouseReleased() {
-    let p = createVector(mouseX, mouseY);
-    let argmin = -1;
-    let minDist = width * height;
+    for (ix = 0; ix < 8; ix++) {
+        for (iy = 0; iy < 8; iy++) {
 
-    for (let i = 0; i < clusters.length; i++) {
-        for (let q of clusters[i]) {
-            let d = distSquared(p, q);
-            if (d < minDist) {
-                argmin = i;
-                minDist = d;
-                continue;
+            choice = int(random(3));
+
+            switch (choice) {
+                case 0:
+                    rect(ix * w8, iy * h8, w8, h8);
+                    break;
+                case 1:
+                    line(ix * w8, iy * h8 + h8, ix * w8 + w8, iy * h8);
+                    break;
+                case 2:
+                    for (i = 0; i < 9; i++) {
+                        line(ix * w8, iy * h8 + i * w8 / 8, ix * w8 + w8, iy * h8 + i * w8 / 8);
+                    }
             }
         }
     }
 
-    if (hulls[argmin].length > 5) {
-        let clu = clusters.splice(argmin, 1)[0];
-        let newClusters = divide(clu);
-        clusters = [...clusters, ...newClusters];
-        hulls.splice(argmin, 1);
-        hulls = [...hulls, convexHull(newClusters[0]), convexHull(newClusters[1])];
-    }
-
-    return false;
+    noLoop(); // stop looping draw()
 }
 
-// divide points into two convex clusters
-function divide(points) {
-    let clusters = [];
-
-    // initialize centroids randomly
-    let centroids = [];
-    for (let i = 0; i < 2; i++) {
-        let c;
-        do {
-            c = random(points);
-        } while (centroids.indexOf(c) != -1)
-        centroids.push(c);
-        clusters.push([]);
-    }
-
-    // assign clusters
-    for (let p of points) {
-        let argmin = 0;
-        let minDist = distSquared(p, centroids[0]);
-        for (let i = 1; i < 2; i++) {
-            let d = distSquared(p, centroids[i]);
-            if (d < minDist) {
-                minDist = d;
-                argmin = i;
-            }
-        }
-        clusters[argmin].push(p);
-    }
-
-    return clusters;
+function mousePressed() {
+    redraw(); // start looping draw()
 }
 
-function convexHull(points) {
-    // adapted from https://en.wikipedia.org/wiki/Gift_wrapping_algorithm#Pseudocode
-    points.sort((p, q) => p.x - q.x);
-    let hull = [];
-    let i = 0;
-    let endPoint;
-    let pointOnHull = points[0];
-    do {
-        hull.push(pointOnHull);
-        endPoint = points[0];
-        for (let j = 0; j < points.length; j++) {
-            let p = p5.Vector.sub(endPoint, pointOnHull);
-            let q = p5.Vector.sub(points[j], pointOnHull);
-            if (endPoint.equals(pointOnHull) || (p.cross(q)).z < 0) {
-                endPoint = points[j];
-            }
-        }
-        i++;
-        pointOnHull = endPoint;
-    } while (!endPoint.equals(points[0]));
-    return hull;
-}
-
-function distSquared(p, q) {
-    return sq(p.x - q.x) + sq(p.y - q.y);
+function keyPressed() {
+    if (key === "s" || key === "S") save('pattern.svg');
 }

@@ -4,73 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Train+One&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="css/newstyle.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 
 <body>
-    <div class="light_container">
-        <div class="inner_container">
-            <div class="topbar">
-                <a href="/" class="light_logo">石</a>
-                <a href="links.html" class="hamburger">
-                    <img src="images/quill_hamburger_dark.png" alt="To links">
-                </a>
-            </div>
-            <h1>michigan app redesign</h1>
-            <h2>01. a brief overview</h2>
-            <p>The Michigan App is the official app of the University of Michigan. Built with the purpose of acquainting students, staff and visitors to campus resources in one place, the Michigan App is often where people get the first impression of the
-                University of Michigan in a digital space. Live since 2016, the Michigan App has over 50,000 downloads on the Google Play Store and serves an average of around 14,000 users per month. And that's just Android– the majority of the users
-                of the Michigan App actually use iOS.  However, there are many aspects of the Michigan App that have room for improvement. This has led to the app struggling to retain its users–many of them leave after using the app for a short period
-                of time for other apps (many of them are developed by students). We were given the task of redesigning the app. </p>
-            <h2>02. the process</h2>
-            <div class="process">
-                <div class="process_item">
-                    <h3>02a. research</h3>
-                    <p>
-                        The first thing we did was do a lot of research through various UX methods:
-                    </p>
-                    <p><b>Object Oriented User Experience (OOUX):</b> showed us what components had overlap / what we could merge together Heuristic evaluation: identified all issues with the app (with varying severities)
-                    </p>
-                    <p><b>Surveys:</b> helped us understand user needs and gave us ideas for new features</p>
-                    <p> <b>Information Architecture (IA) Diagram:</b> laid out everything we had to work with</p>
-                    <p><b>Contextual inquiry of developers: </b>helped us understand how feasible our ideas were</p>
-                    <p><b>Competitive analysis:</b>helped us understand what works and what doesn't. Gave us some inspiration for our own features</p>
-                    <p><b>Impact-effort graph:</b> allowed us to come up with a list of quick fixes</p>
+    <div class="topbar_group">
+        <h1 class="topbar_header">michigan app redesign</h1>
+        <div class="container topbar">
+            <a href="/nav.html">
+                <div style="width: 10vw; height: 9vw;">
+                    <svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.3125 8.5H28.6875M5.3125 17H28.6875M5.3125 25.5H28.6875" stroke="#41382A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
                 </div>
-                <div class="process_item">
-                    <h3>02b. identifying problems</h3>
-                    <p>After wrapping up our research, we identified the main problems: </p>
-                    <p><b>1. Struggling to successfully meet everyone's needs</b></p>
-                    <p>The Michigan App has 3 primary personas: students, faculty and staff. Each of these user groups have different needs, and the old Michigan App was trying to appease everyone (but in reality, not satisfying anyone).  To solve this,
-                        we introduce modularity. Each section will be separated into individual modules that can be collapsed, hidden, and rearranged. The homepage will consist of these modules, and users can determine which ones they want to include
-                        and which ones they want to leave out. Thus, users can customize their homepage to meet their needs (e.g students might include the module related to dining halls and leave out parking, while staff may do the opposite). </p>
-                    <p><b>2. Difficult to navigate and find features, especially the navigation/transportation features</b></p>
-                    <p>Navigation and directions is an essential part of a lot of the features on the app. It is also something that is used by all users. However, they are often spread out and difficult to navigate.  To solve this, we introduce 'Places',
-                        a singular page where features that require navigation (bus, dining, parking, and class location) are displayed.  </p>
-                </div>
-
-            </div>
-            <h2>impact</h2>
-            <p>One of the biggest challenges we ran into while doing this project was the lack of direction. There didn't seem to be much leadership support behind the app, and it almost seemed like no one was thinking big picture about what purpose the
-                app should serve. While initially these were indeed just our own speculations, they ended up being true when we spoke to leadership. We knew that in order for the Michigan App to reach its true potential, it needed interdepartmental collaboration
-                and leadership support. Luckily, we were able to achieve this by successfully pitching this idea to the Assistant Vice President of ITS Administration and Operations, Diane Jones.</p>
-            <h2>links</h2>
-            <div class="project_links">
-                <a href="https://www.figma.com/file/0GN2P7Ky5Ws3aHDlFoKVHI/OOUX-(Community)?type=whiteboard&node-id=0%3A1&t=AO0Hqr4axFHak1x0-1" class="project_links_item">OOUX</a>
-                <a href="https://www.figma.com/file/ENH0qhrwGuWgTpi6iPAdfc/Discovery-and-Research?type=whiteboard&node-id=0%3A1&t=UJUkYT50neGEnKhT-1" class="project_links_item">IA</a>
-                <a href="https://www.figma.com/file/ENH0qhrwGuWgTpi6iPAdfc/Discovery-and-Research?type=whiteboard&node-id=0%3A1&t=UJUkYT50neGEnKhT-1" class="project_links_item">IMPACT EFFORT</a>
-                <a href="https://www.figma.com/file/ENH0qhrwGuWgTpi6iPAdfc/Discovery-and-Research?type=whiteboard&node-id=0%3A1&t=UJUkYT50neGEnKhT-1" class="project_links_item">HEURISTIC EVALUATION</a>
-            </div>
+            </a>
         </div>
-
-
-
     </div>
+    <div class="blurb"><b>A user experience focused redesign of the official Michigan App,</b>in collaboration with the University of Michigan Mobile App Team</div>
 
 </body>
 

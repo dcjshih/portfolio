@@ -14,7 +14,7 @@
     h1 {
         font-style: normal;
         font-weight: 700;
-        font-size: 18vw;
+        font-size: 17vw;
         /* line-height: 92px; */
         /* identical to box height */
         margin: 0;
@@ -35,6 +35,11 @@
 
     h3 {
         margin: 0;
+    }
+
+    p {
+        letter-spacing: 0.02em;
+        font-size: 3vw;
     }
 
     a,
@@ -61,7 +66,7 @@
         color: #41382A;
         border-radius: 8px;
         border: 2px solid #41382A;
-        box-shadow: 8px 8px 0px 0px #41382A;
+        box-shadow: 7px 8px 0px 0px #41382A;
     }
 
     .link_name,
@@ -96,25 +101,13 @@
         align-items: center;
     }
 
-    .svg_container {
-        /* width: 13vw;
-        height: 12vw;
-        resize: both;
-        overflow: auto;
-        border: 1px dashed #aaa; */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
     svg {
         width: 95%;
         height: 95%;
     }
 
-    path {
-        transform-box: fill-box;
-        transform-origin: center;
+    .topbar_header {
+        width: 75%;
     }
     /* ########### Landing Page ########### */
     /******* Navigation Links Section *******/
@@ -143,8 +136,8 @@
     .group_contact_links {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 28%;
-        margin: 2vh 0;
+        justify-items: start;
+        gap: 10% 0;
     }
     /* Inner/container layout for contacts/social links */
 
@@ -156,7 +149,7 @@
         justify-content: center;
         align-items: center;
     }
-    /******* Projects Section *******/
+    /* ########### Projects Page ########### */
     /* Layout for the projects section */
 
     .group_projects {
@@ -202,8 +195,10 @@
         letter-spacing: 0em;
     }
 
-    .project_desc {
-        font-size: 80%;
+    .group_project_labels {
+        display: flex;
+        flex-direction: row;
+        gap: 3%;
     }
 
     .project_label {
@@ -215,4 +210,163 @@
         border-radius: 8px;
         width: fit-content;
         padding: 2px 8px;
+    }
+    /* ########### About Page ########### */
+    /* ########### School Projects Page ########### */
+
+    .dashed_container {
+        /* width: 100%; */
+        background-color: #FAF9F7;
+        color: #41382A;
+        border-radius: 8px;
+        border: 2px dashed #41382A;
+    }
+
+    .headshot {
+        max-width: 40%;
+        object-fit: contain;
+    }
+
+    #homepage_photo {
+        display: none;
+    }
+
+    @media screen and (min-width: 425px) {
+        #homepage_photo {
+            display: none;
+        }
+        body {
+            padding: 0 10vw;
+        }
+        h1 {
+            font-size: 15vw;
+        }
+        h2 {
+            font-size: 10vw;
+            margin: 8vw 0 8vw 0;
+        }
+        p {
+            font-size: 2vw;
+        }
+        .blurb {
+            font-size: 5vw;
+            line-height: 4.8vw;
+        }
+        .link_name {
+            font-size: 4vw;
+            margin: 2vw;
+        }
+        .contact_links {
+            width: 20vw;
+            height: 20vw;
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        #laptop_formatting {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+        }
+        #homepage_photo {
+            display: inline;
+            width: 100%;
+            margin-right: -20px;
+        }
+        h1 {
+            font-size: 8vw;
+        }
+        h2 {
+            font-size: 5vw;
+            margin: 0 0 2vw 0;
+        }
+        .blurb {
+            font-size: 3vw;
+            line-height: 3vw;
+        }
+        .topbar {
+            position: relative;
+            width: 9vw;
+            /* Adjust the width as needed */
+            height: 8vw;
+            /* Adjust the height to accommodate both rectangles */
+            margin: 10px 2vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .topbar_group {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        svg {
+            width: 80%;
+            height: 80%;
+        }
+        .topbar_header {
+            width: 75%;
+        }
+        .group_projects {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5vw;
+            margin: 4vw 0 4vw 0;
+        }
+        .project_number {
+            font-weight: 700;
+            font-size: 6vw;
+            font-style: italic;
+            letter-spacing: 0em;
+        }
+        .project_heading {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            height: 25%;
+        }
+        .project_name {
+            font-weight: 700;
+            font-size: 3vw;
+            width: 60%;
+            font-style: italic;
+            letter-spacing: 0em;
+        }
+        .project_desc {
+            font-size: 1.5vw;
+            display: -webkit-box;
+            /* max-width: 200px; */
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .project_label {
+            font-weight: 500;
+            font-size: 2vw;
+            width: 60%;
+            letter-spacing: 0em;
+            border: solid #41382A 2px;
+            border-radius: 8px;
+            width: fit-content;
+            padding: 2px 8px;
+        }
+        .project_container {
+            width: 100%;
+            height: fit-content;
+        }
+        .link_name {
+            font-size: 2vw;
+            margin: 1vw;
+        }
+        .contact_links {
+            width: 10vw;
+            height: 10vw;
+        }
+        .group_contact_links {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
     }

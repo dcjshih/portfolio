@@ -335,7 +335,14 @@
         width: 100%;
     }
 
-    @media (min-width: 768px) {
+    .headshot {
+        width: 50%;
+    }
+
+    @media (min-width: 430px) {
+        .body {
+            padding: 30vw;
+        }
         .inner_container {
             width: 85%;
             margin-left: 10%;
