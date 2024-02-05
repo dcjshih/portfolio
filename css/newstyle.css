@@ -28,13 +28,10 @@
         font-weight: 700;
         font-size: 12vw;
         line-height: 46px;
+        margin: 1vh 0;
         /* identical to box height */
         letter-spacing: -0.08em;
         color: #41382A;
-    }
-
-    h3 {
-        margin: 0;
     }
 
     p {
@@ -236,17 +233,16 @@
             display: none;
         }
         body {
-            padding: 0 10vw;
+            padding: 3vh 10vw;
         }
         h1 {
             font-size: 15vw;
         }
         h2 {
             font-size: 10vw;
-            margin: 8vw 0 8vw 0;
         }
         p {
-            font-size: 2vw;
+            font-size: 2.5vw;
         }
         .blurb {
             font-size: 5vw;
@@ -271,14 +267,13 @@
         #homepage_photo {
             display: inline;
             width: 100%;
-            margin-right: -20px;
+            margin: 0 0 0 40px;
         }
         h1 {
             font-size: 8vw;
         }
         h2 {
             font-size: 5vw;
-            margin: 0 0 2vw 0;
         }
         .blurb {
             font-size: 3vw;
