@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/newstyle.css">
+
+</head>
+
+<body>
+    <div class="topbar_group">
+        <h1 class="topbar_header">wads database</h1>
+        <a href="/nav.html">
+            <div class="keycap_container topbar">
+                <svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.3125 8.5H28.6875M5.3125 17H28.6875M5.3125 25.5H28.6875" stroke="#41382A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+            </div>
+        </a>
+    </div>
+    <div class="blurb"><b>Designed and developed a database that tracks all web applications the Web & Application Development Services (W&ADS) develops.</b> Used Ruby on Rails, HTML, TailwindCSS, and SQLite.</div>
+
+    <h2>A brief overview</h2>
+    <p>
+        I created this in the summer of 2023, for the Web & Application Development Services department of LSA TS. While I was working on another project at the time that streamlined the documentation path for all of their web apps, I had to gather a list of
+        all the web applications that W&ADS managed. I quickly realized that there was no central source of information. It was scattered across numerous spreadsheets and people, and it quickly proved to be a very tedious and time consuming task– when
+        it really shouldn't be. That was the inspiration behind this project: to showcase and present the projects W&ADS had been working on all these years so they were easily accessible to anyone who was interested.  </p>
+    <h2>The process</h2>
+    <h3>Phase 1: Database Design and Wireframing</h3>
+    <p>The first thing we did was plan out what our app was roughly going to look like. We started off with some low fidelity sketches of what our site would look like. </p>
+    <strong> Our lo-fi sketches </strong>
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="margin: 4vw 0;">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/home.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="images/developer.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="images/webapp.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="images/developer profile.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="images/webapp profile.png" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <p>We also did some database design–drew out an ER diagram and came up with our schemas</p>
+    <strong>Database design work</strong>
+    <img src="images/database.png">
+    <h3>Phase 2: Development</h3>
+    <p>
+        We did pair programming for a good chunk of development, which I actually liked a lot. The other parts were done asynchronously. The first thing we focused on was creating the webapp and developer tables– stuff that users were going to use the most. I
+        built the search/filtering feature with the help of ransack so that users would be able to easily find what they needed, whether it be webapp or developer. While this worked perfectly, we still needed to make sure that W&ADS was able to add/edit/delete
+        entries.
+    </p>
+    <p>
+        Thus, the second thing we focused on was authentication, authorization, and roles. To do so, I used a combination of 3 different gems: devise for authentication, CanCanCan for authorization, and rolify for roles. For authentication, I modified devise's
+        sign up process so that only members of W&ADS are able to create an account. I was able to do this by linking it up with MCommunity (a directory of people and groups at UofM) so that only people that were in the W&ADS group were able to sign up.
+        I also linked up the user model and the developer model so whenever a new user is created, a developer profile is created as well (a one-to-one relationship). For roles and authorization, I created an 'admin' role, and a 'developer' role. Users
+        that had the 'admin' role had access to everything, and the ability to modify the roles of all the users. Users that had the 'developer' role in a webapp were able to only edit/delete the information about that specific webapp. To prevent non-authorized
+        users from accessing things, I used CanCanCan.</p>
+    <p>
+        As for styling, we stuck as closely to the W&ADS general style guidelines as much as possible. Throughout our entire development process, we continually asked for feedback from the team. We would demo our app every week or so, getting good insight on
+        stuff we should add, and stuff we should fix.
+    </p>
+    <h3>Phase 2: Testing</h3>
+    <p>As we wrapped up our project, we started to focus more on testing. We created a test plan that essentially walked through every part of the user experience for every role (logged out, logged in developer, logged in admin, etc) and identified any bugs
+        or mistakes that way. </p>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+</html>

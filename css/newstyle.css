@@ -35,12 +35,23 @@
     }
 
     h3 {
+        font-size: 6vw;
         margin: 0;
+        font-family: 'Helvetica';
+        font-style: normal;
+        font-weight: 600;
     }
 
     p {
         letter-spacing: 0.02em;
-        font-size: 3vw;
+        font-size: 4vw;
+    }
+
+    img {
+        width: 100%;
+        border-radius: 8px;
+        border: 2px solid #41382A;
+        margin: 4vw 0;
     }
 
     a,
@@ -61,7 +72,7 @@
         margin: 2vh 0;
     }
 
-    .container {
+    .keycap_container {
         /* width: 100%; */
         background-color: #FAF9F7;
         color: #41382A;
@@ -279,6 +290,13 @@
         h2 {
             font-size: 5vw;
         }
+        h3 {
+            font-size: 2vw;
+            margin: 0;
+        }
+        p {
+            font-size: 1.7vw;
+        }
         .blurb {
             font-size: 3vw;
             line-height: 3vw;
@@ -314,24 +332,13 @@
             margin: 4vw 0 4vw 0;
         }
         .project_number {
-            font-weight: 700;
             font-size: 6vw;
-            font-style: italic;
-            letter-spacing: 0em;
         }
         .project_heading {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            height: 25%;
+            height: 35%;
         }
         .project_name {
-            font-weight: 700;
-            font-size: 3vw;
-            width: 60%;
-            font-style: italic;
-            letter-spacing: 0em;
+            font-size: 2.5vw;
         }
         .project_desc {
             font-size: 1.5vw;
@@ -342,14 +349,7 @@
             overflow: hidden;
         }
         .project_label {
-            font-weight: 500;
-            font-size: 2vw;
-            width: 60%;
-            letter-spacing: 0em;
-            border: solid #41382A 2px;
-            border-radius: 8px;
-            width: fit-content;
-            padding: 2px 8px;
+            font-size: 1.5vw;
         }
         .project_container {
             width: 100%;
