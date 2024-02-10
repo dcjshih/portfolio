@@ -284,12 +284,14 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             align-items: center;
+            justify-items: center;
         }
         #homepage_photo {
             display: inline;
-            width: 100%;
-            margin: 0 0 0 40px;
+            width: 65%;
+            /* margin: 0 0 0 40px; */
             border: none;
+            margin: 0;
         }
         h1 {
             font-size: 5rem;
