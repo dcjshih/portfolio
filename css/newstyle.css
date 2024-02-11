@@ -235,6 +235,17 @@
         padding: 2px 8px;
     }
     /* ########### About Page ########### */
+
+    .skill_label {
+        border: dashed #41382A 3px;
+        border-radius: 9px;
+        text-align: center;
+        width: fit-content;
+        padding: 0.5rem 1rem;
+        font-size: 1.5rem;
+        letter-spacing: -0.08rem;
+        font-weight: 500;
+    }
     /* ########### School Projects Page ########### */
 
     .dashed_container {
