@@ -207,7 +207,7 @@
         justify-content: start;
         align-items: center;
         gap: 10%;
-        height: 10%;
+        height: 40%;
     }
 
     .project_name {
@@ -354,11 +354,39 @@
             font-size: 20px;
         }
         body {
-            padding: 1rem 10rem;
+            padding: 3rem 10rem;
+        }
+        #nav {
+            padding: 0 8rem;
         }
         .group_projects {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
+        }
+        .group_projects {
+            padding: 2rem 4rem;
+        }
+        .project_number {
+            font-size: 5rem;
+        }
+        .project_name {
+            font-size: 2rem;
+        }
+        .project_desc {
+            font-size: 1.5rem;
+            display: -webkit-box;
+            /* max-width: 200px; */
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .project_label {
+            font-size: 1.5rem;
+        }
+        .link_name,
+        .link_name:visited {
+            font-weight: 500;
+            font-size: 1.6rem;
         }
     }
