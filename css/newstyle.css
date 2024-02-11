@@ -348,3 +348,17 @@
             overflow: hidden;
         }
     }
+
+    @media screen and (min-width: 1024px) {
+        html {
+            font-size: 18px;
+        }
+        body {
+            padding: 5rem 10rem;
+        }
+        .group_projects {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+    }
