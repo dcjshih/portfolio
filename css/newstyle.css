@@ -139,7 +139,7 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 2rem;
         height: fit-content;
     }
     /* Layout for the navigation links section */
@@ -351,10 +351,10 @@
 
     @media screen and (min-width: 1024px) {
         html {
-            font-size: 18px;
+            font-size: 20px;
         }
         body {
-            padding: 5rem 10rem;
+            padding: 1rem 10rem;
         }
         .group_projects {
             display: grid;
